@@ -33,10 +33,8 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
 	
-	// 수동 추가 - 수정후 gradle -> refresh gradle project 실행: 안하면 동작안함(중요)
-    //implementation 'javax.servlet:jstl'  // springboot 2.x
-   
-    // jsp , jstl  // 각각 tomcat, jsp, jstl, jstl
+	// 수동 추가
+	// jdk 17, jsp , jstl
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'   
     implementation 'jakarta.servlet:jakarta.servlet-api' //스프링부트 3.0 이상
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' // 스프링부트 3.0 이상
@@ -44,6 +42,7 @@ dependencies {
 
     // junit
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	
 }
 
 tasks.named('bootBuildImage') {

@@ -10,13 +10,13 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor		// NoArgs  : 기본 생성자
-@AllArgsConstructor		// AllArgs : 모든 인자 있는 생성자
+@NoArgsConstructor
+@AllArgsConstructor
 public class MenuVo {
-	// Fields
-	@NonNull			// import : lombok NonNull
-	private String menu_id;
-	private String menu_name;
-	private String menu_seq;
-	
+
+	@NonNull
+	private  String  menu_id;	
+	private  String  menu_name;
+	private  int     menu_seq;
+		
 }

@@ -1,11 +1,9 @@
 -- 메뉴 목록
-create table menus (
-	  menu_id    varchar2(6)  primary key
-	, menu_name  varchar2(100)
-	, menu_seq   number(5)
+CREATE  TABLE   MENUS (
+     MENU_ID     VARCHAR2(6)   PRIMARY KEY
+    ,MENU_NAME   VARCHAR2(100)
+    ,MENU_SEQ    NUMBER(5)
 );
 
-insert into menus
-  values ( 'menu01', 'java', 1 );
-  
-commit;
+INSERT  INTO   MENUS  VALUES ('MENU01', 'JAVA', 1 );
+COMMIT;
