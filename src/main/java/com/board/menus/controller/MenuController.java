@@ -113,6 +113,29 @@ public class MenuController {
 		return "redirect:/Menus/List";
 	}
 	
+	// 메뉴 수정 : /Menus/UpdateForm?menu_id=${ menu.menu_id }
+	@RequestMapping("/UpdateForm")
+	public String updateForm( MenuVo menuVo ) {
+		
+		// 수정할 데이터를 menu_id 조회
+		
+		// 조회한 데이터를 model 에 담음 -> .jsp 는 model 에 담긴걸 ${} 로 빼오면 됨
+		
+		return "menus/update";
+	}
+	
+	// /Menus/Update  <- update.jsp 작업 중 생성 = 35줄 action 주소
+	@RequestMapping("/Update")
+	public String update( MenuVo menuVo ) {
+		
+		// 수정
+		
+		
+		// 수정 후 조회
+		return "redirect:/Menus/List";
+	}
+	
+	
 	
 }
 
