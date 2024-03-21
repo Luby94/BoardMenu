@@ -19,6 +19,8 @@ public interface MenuMapper {
 
 	// menuMapper.xml 에서 id="deleteMenu" SQL 문을 찾아서 실행
 	void deleteMenu( MenuVo menuVo );
+
+	void insertMenuByName(MenuVo menuVo);
 	
 
 	

@@ -96,6 +96,23 @@ public class MenuController {
 	
 	}
 	
+	// // 메뉴 입력받는 화면2  :  /Menus/WriteForm2
+	@RequestMapping("/WriteForm2")
+	public String writeForm2() {
+		
+		return "menus/write2";
+	}
+	
+	@RequestMapping("/Write2")
+	public String write2( MenuVo menuVo ) {
+		
+		// 저장
+		menuMapper.insertMenuByName( menuVo );
+		
+		// 조회로 이동
+		return "redirect:/Menus/List";
+	}
+	
 	
 }
 
