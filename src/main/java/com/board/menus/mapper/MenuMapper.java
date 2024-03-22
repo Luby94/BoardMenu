@@ -21,6 +21,12 @@ public interface MenuMapper {
 	void deleteMenu( MenuVo menuVo );
 
 	void insertMenuByName(MenuVo menuVo);
+
+	MenuVo getMenu(String menu_id);
+
+	void updateMenu(MenuVo menuVo);
+	
+	// insertMenu, getMenuList, deleteMenu tec : mapper 안에 있는 tag 의 id -> menuMapper.xml
 	
 
 	

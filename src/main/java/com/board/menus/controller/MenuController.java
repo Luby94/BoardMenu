@@ -25,7 +25,7 @@ public class MenuController {
 		List<MenuVo> menuList = menuMapper.getMenuList();
 				
 		// 조회 결과를 넘겨준다 ( Model )
-		model.addAttribute( "menuList", menuList );
+		model.addAttribute( "menuList", menuList );		// model 에 조회한 data 를 addAttribute 해줌
 		// System.out.println( "MenuController list() menuList:" + menuList );
 		
 		return "menus/list";
@@ -115,24 +115,31 @@ public class MenuController {
 	
 	// 메뉴 수정 : /Menus/UpdateForm?menu_id=${ menu.menu_id }
 	@RequestMapping("/UpdateForm")
-	public String updateForm( MenuVo menuVo ) {
+	public String updateForm( MenuVo menuVo, Model model ) {
+		System.out.println( "menuVo: " + menuVo );
+		String menu_id = menuVo.getMenu_id();		// menuVo.getMenu_id() = ${ menu.menu_id }
 		
 		// 수정할 데이터를 menu_id 조회
+		MenuVo menu = menuMapper.getMenu( menu_id );
 		
 		// 조회한 데이터를 model 에 담음 -> .jsp 는 model 에 담긴걸 ${} 로 빼오면 됨
+		model.addAttribute( "menu", menu );
+		
 		
 		return "menus/update";
 	}
 	
 	// /Menus/Update  <- update.jsp 작업 중 생성 = 35줄 action 주소
+	// 수정 주소줄 : http://localhost:9090/Menus/Update?menu_id=menu08&menu_name=SpringBoot222&menu_seq=8
 	@RequestMapping("/Update")
 	public String update( MenuVo menuVo ) {
 		
 		// 수정
-		
+		menuMapper.updateMenu( menuVo );
 		
 		// 수정 후 조회
 		return "redirect:/Menus/List";
+		
 	}
 	
 	
